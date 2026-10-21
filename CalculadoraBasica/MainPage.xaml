@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CalculadoraBasicaA.MainPage">
+  <ScrollView><VerticalStackLayout Padding="24,30" Spacing="18" MaximumWidthRequest="560" HorizontalOptions="Fill">
+    <Label Text="03 / CUATRO OPERACIONES" FontSize="12" FontAttributes="Bold" TextColor="#235CF2" />
+    <Label Text="Calculadora" FontSize="30" FontAttributes="Bold" />
+    <VerticalStackLayout Spacing="10"><Label Text="Primer número" FontAttributes="Bold" />
+        <Entry x:Name="FirstNumberEntry" Placeholder="Ejemplo: 8" Keyboard="Numeric" MaxLength="40" SemanticProperties.Description="Primer número" /><Label Text="Segundo número" FontAttributes="Bold" />
+        <Entry x:Name="SecondNumberEntry" Placeholder="Ejemplo: 4" Keyboard="Numeric" MaxLength="40" SemanticProperties.Description="Segundo número" /></VerticalStackLayout><Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto" ColumnSpacing="10" RowSpacing="10"><Button Grid.Row="0" Grid.Column="0" Text="+" CommandParameter="+" Clicked="OnOperationClicked" FontSize="26" SemanticProperties.Description="Sumar" /><Button Grid.Row="0" Grid.Column="1" Text="−" CommandParameter="-" Clicked="OnOperationClicked" FontSize="26" SemanticProperties.Description="Restar" /><Button Grid.Row="1" Grid.Column="0" Text="×" CommandParameter="*" Clicked="OnOperationClicked" FontSize="26" SemanticProperties.Description="Multiplicar" /><Button Grid.Row="1" Grid.Column="1" Text="÷" CommandParameter="/" Clicked="OnOperationClicked" FontSize="26" SemanticProperties.Description="Dividir" /></Grid><Border BackgroundColor="{StaticResource Soft}"><Label x:Name="ResultLabel" Text="Resultado:" FontSize="24" FontAttributes="Bold" HorizontalTextAlignment="Center" /></Border>
+    <Button Text="Limpiar" Clicked="OnClearClicked" Style="{StaticResource Secondary}" />
+  </VerticalStackLayout></ScrollView>
+</ContentPage>
