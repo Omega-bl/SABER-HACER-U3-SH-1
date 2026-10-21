@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <!-- Cada proyecto contiene TODO lo necesario. No depende de otras carpetas. -->
+    <AppDotNetVersion Condition="'$(AppDotNetVersion)' == '' and $([MSBuild]::VersionGreaterThanOrEquals('$(MSBuildVersion)', '18.0'))">10.0</AppDotNetVersion>
+    <AppDotNetVersion Condition="'$(AppDotNetVersion)' == ''">9.0</AppDotNetVersion>
+    <TargetFramework>net$(AppDotNetVersion)-android</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>HolaMauiA</RootNamespace>
+    <UseMaui>true</UseMaui>
+    <SingleProject>true</SingleProject>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>12.0</LangVersion>
+    <ApplicationTitle>Hola MAUI A</ApplicationTitle>
+    <ApplicationId>com.practicas.independientes.holamauia</ApplicationId>
+    <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+    <ApplicationVersion>1</ApplicationVersion>
+    <SupportedOSPlatformVersion>24.0</SupportedOSPlatformVersion>
+    <RuntimeIdentifier>android-x64</RuntimeIdentifier>
+    <AndroidPackageFormats>apk</AndroidPackageFormats>
+    <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
+  </PropertyGroup>
+  <ItemGroup>
+    <MauiIcon Include="Resources/AppIcon/appicon.svg" Color="#235CF2" />
+    <MauiSplashScreen Include="Resources/Splash/splash.svg" Color="#F5F7FC" BaseSize="128,128" />
+    <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
+  </ItemGroup>
+</Project>

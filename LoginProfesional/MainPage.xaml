@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LoginProfesionalA.MainPage">
+  <ScrollView><VerticalStackLayout Padding="24,32" Spacing="18" MaximumWidthRequest="560" HorizontalOptions="Fill">
+      <Label Text="Bienvenido" FontSize="34" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+      <Label Text="Inicia sesión en tu cuenta" TextColor="{StaticResource Muted}" HorizontalTextAlignment="Center" />
+      <Label x:Name="ModoLabel" FontSize="12" TextColor="{StaticResource Muted}" HorizontalTextAlignment="Center" />
+      <Border x:Name="Formulario"><VerticalStackLayout Spacing="14"><Label Text="Correo electrónico" FontAttributes="Bold" />
+          <Entry x:Name="CorreoEntry" Placeholder="tu@correo.com" Keyboard="Email" MaxLength="254" SemanticProperties.Description="Correo electrónico" />
+          <Label Text="Contraseña" FontAttributes="Bold" />
+          <Entry x:Name="ClaveEntry" Placeholder="Entre 8 y 128 caracteres" IsPassword="True" MaxLength="128" ReturnType="Go" Completed="OnEntrarClicked" SemanticProperties.Description="Contraseña" />
+          <Grid ColumnDefinitions="*,Auto" ColumnSpacing="8">
+            <Button x:Name="MostrarButton" Text="Mostrar" Style="{StaticResource Secondary}" Clicked="OnMostrarClicked" />
+            <HorizontalStackLayout Grid.Column="1"><CheckBox x:Name="RecordarCheck" Color="{StaticResource Primary}" /><Label Text="Recordar correo" VerticalOptions="Center" FontSize="13" /></HorizontalStackLayout>
+          </Grid>
+          <Button Text="Iniciar sesión" Clicked="OnEntrarClicked" /><Button Text="Crear cuenta" Style="{StaticResource Secondary}" Clicked="OnCrearClicked" />
+          <Button Text="Olvidé mi contraseña" Style="{StaticResource Secondary}" Clicked="OnRecuperarClicked" /></VerticalStackLayout></Border>
+      <Border x:Name="SesionPanel" IsVisible="False"><VerticalStackLayout Spacing="18">
+        <Label Text="Sesión iniciada" FontSize="24" FontAttributes="Bold" />
+        <Label x:Name="NombreLabel" FontSize="25" /><Label x:Name="CorreoLabel" />
+        <Button Text="Cerrar sesión" Clicked="OnSalirClicked" />
+      </VerticalStackLayout></Border>
+      <ActivityIndicator x:Name="Carga" IsVisible="False" IsRunning="False" Color="{StaticResource Primary}" />
+      <Label x:Name="EstadoLabel" Text="Primero crea una cuenta para probar el acceso." HorizontalTextAlignment="Center" />
+  </VerticalStackLayout></ScrollView>
+</ContentPage>

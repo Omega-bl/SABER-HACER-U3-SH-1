@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LoginProfesionalA.RegistroPage" Title="Crear cuenta">
+  <ScrollView><VerticalStackLayout x:Name="Formulario" Padding="24" Spacing="13" MaximumWidthRequest="560" HorizontalOptions="Fill">
+      <Label Text="Crear cuenta" FontSize="30" FontAttributes="Bold" />
+      <Label x:Name="AyudaLabel" TextColor="{StaticResource Muted}" />
+      <Label Text="Nombre" /><Entry x:Name="NombreEntry" Placeholder="Tu nombre" MaxLength="80" />
+      <Label Text="Correo electrónico" /><Entry x:Name="CorreoEntry" Placeholder="tu@correo.com" Keyboard="Email" MaxLength="254" />
+      <Label Text="Contraseña" /><Entry x:Name="ClaveEntry" IsPassword="True" MaxLength="128" />
+      <Label Text="Repite la contraseña" /><Entry x:Name="ConfirmarEntry" IsPassword="True" MaxLength="128" />
+      <VerticalStackLayout x:Name="RecuperacionPanel" Spacing="8"><Label Text="Palabra de recuperación" /><Entry x:Name="PalabraEntry" Placeholder="Una palabra que recuerdes, mínimo 4 caracteres" IsPassword="True" MaxLength="80" /></VerticalStackLayout>
+      <Button Text="Guardar cuenta" Clicked="OnGuardarClicked" />
+      <ActivityIndicator x:Name="Carga" IsVisible="False" Color="{StaticResource Primary}" />
+      <Label x:Name="EstadoLabel" HorizontalTextAlignment="Center" />
+  </VerticalStackLayout></ScrollView>
+</ContentPage>

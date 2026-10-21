@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="HolaMauiA.MainPage">
+  <ScrollView><VerticalStackLayout Padding="24,50" Spacing="22" MaximumWidthRequest="520" HorizontalOptions="Fill">
+    <Label Text="HOLA, MAUI" FontSize="13" TextColor="#235CF2" FontAttributes="Bold" />
+    <Border><VerticalStackLayout Spacing="18"><Label Text="¿Cómo te llamas?" FontSize="28" FontAttributes="Bold" />
+        <Entry x:Name="NombreEntry" Placeholder="Escribe tu nombre" MaxLength="80" ReturnType="Go" Completed="OnSaludarClicked" SemanticProperties.Description="Nombre" /><Button Text="Saludar" Clicked="OnSaludarClicked" />
+        <Button Text="Limpiar" Style="{StaticResource Secondary}" Clicked="OnLimpiarClicked" /></VerticalStackLayout></Border>
+    <Border><Label x:Name="MensajeLabel" Text="Aquí aparecerá tu saludo" HorizontalTextAlignment="Center" FontSize="20" /></Border>
+  </VerticalStackLayout></ScrollView>
+</ContentPage>

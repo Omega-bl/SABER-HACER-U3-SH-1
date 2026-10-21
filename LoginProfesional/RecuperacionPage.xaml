@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LoginProfesionalA.RecuperacionPage" Title="Recuperar acceso">
+  <ScrollView><VerticalStackLayout x:Name="Formulario" Padding="24" Spacing="13" MaximumWidthRequest="560" HorizontalOptions="Fill">
+      <Label Text="Recuperar acceso" FontSize="30" FontAttributes="Bold" />
+      <Label x:Name="AyudaLabel" TextColor="{StaticResource Muted}" />
+      <Label Text="Correo electrónico" /><Entry x:Name="CorreoEntry" Placeholder="El correo de tu cuenta" Keyboard="Email" MaxLength="254" />
+      <Button x:Name="SolicitarButton" Text="Solicitar código" Clicked="OnSolicitarClicked" Style="{StaticResource Secondary}" />
+      <Label x:Name="VerificadorLabel" /><Entry x:Name="VerificadorEntry" MaxLength="128" />
+      <Label Text="Nueva contraseña" /><Entry x:Name="ClaveEntry" IsPassword="True" MaxLength="128" />
+      <Label Text="Repite la nueva contraseña" /><Entry x:Name="ConfirmarEntry" IsPassword="True" MaxLength="128" />
+      <Button Text="Restablecer contraseña" Clicked="OnRestablecerClicked" />
+      <ActivityIndicator x:Name="Carga" IsVisible="False" Color="{StaticResource Primary}" />
+      <Label x:Name="EstadoLabel" HorizontalTextAlignment="Center" />
+  </VerticalStackLayout></ScrollView>
+</ContentPage>
